@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jyw.mykanjinote">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Kanjinote"
+        android:usesCleartextTraffic="true">
+        <activity android:name="com.jyw.mykanjinote.BannerDeleteActivity"></activity>
+        <activity android:name="com.jyw.mykanjinote.AddBannerActivity" />
+        <activity android:name="com.jyw.mykanjinote.bannerSettingActivity" />
+        <activity android:name="com.jyw.mykanjinote.NewsPageActivity" />
+        <activity android:name="com.jyw.mykanjinote.NewsActivity" />
+        <activity android:name="com.jyw.mykanjinote.WebImageActivity" />
+        <activity android:name="com.jyw.mykanjinote.FlashCardActivity" />
+        <activity android:name="com.jyw.mykanjinote.QuizActivity" />
+        <activity android:name="com.jyw.mykanjinote.QuizMenuActivity" />
+        <activity android:name="com.jyw.mykanjinote.NoteListAllActivity" />
+        <activity android:name="com.jyw.mykanjinote.CharacterActivity" />
+        <activity
+            android:name="com.jyw.mykanjinote.ChangeFolderNameActivity"
+            android:theme="@style/dlg" />
+        <activity android:name="com.jyw.mykanjinote.FolderSettingActivity" />
+        <activity android:name="com.jyw.mykanjinote.AddCharacterActivity" />
+        <activity android:name="com.jyw.mykanjinote.NoteActivity" />
+        <activity
+            android:name="com.jyw.mykanjinote.AddFolderActivity"
+            android:theme="@style/dlg" />
+        <activity android:name="com.jyw.mykanjinote.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.jyw.mykanjinote.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>
